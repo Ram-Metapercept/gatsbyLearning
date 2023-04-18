@@ -1,6 +1,8 @@
 ---
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
+description: "this is my project"
+
 ---
 
 Wow! I love blogging so much already.

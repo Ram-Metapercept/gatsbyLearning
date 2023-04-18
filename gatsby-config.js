@@ -1,12 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+// const queries = require('./src/utils/algolia')
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -27,6 +21,16 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-algolia',
+      options: {
+        appId: "S2KLHJSUYP",
+        apiKey:"53869a2d1c62bdcd2322f409f518ea45",
+        indexName: "Blog",
+        queries:require('./src/utils/algolia'),
+        chunkSize: 10000,
       },
     },
     {
@@ -114,9 +118,7 @@ module.exports = {
         short_name: `Gatsby`,
         start_url: `/`,
         background_color: `#ffffff`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+  
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
